@@ -1,0 +1,22 @@
+{
+  "name": "grouploop",
+  "version": "1.0.0",
+  "description": "A jquery plugin that creates a marquee with any group of DOM elements.",
+  "main": "grouploop-1.0.0.js",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Scott Alguire",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.24.6",
+    "gulp": "^3.9.1",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.1",
+    "gulp-uglify": "^3.0.0",
+    "pump": "^3.0.0"
+  }
+}

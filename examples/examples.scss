@@ -1,0 +1,52 @@
+$promo-carousel-border-bottom: 1px solid #eee;
+
+$promo-carousel-item-font-weight: bold;
+$promo-carousel-item-border-right: 1px solid #eee;
+
+$promo-carousel-item-bg-color: #fff;
+$promo-carousel-item-font-color: #333;
+
+$promo-carousel-item-active-bg-color: rgb(18, 128, 179);
+$promo-carousel-item-active-font-color: #fff;
+
+.promo-carousel {
+  border-bottom: $promo-carousel-border-bottom;
+  padding-bottom: 0;
+  overflow: hidden;
+  .item-wrap {
+    transform: translateX(0px);
+    width: 200%;
+    position: relative;
+    white-space: nowrap;
+    display: flex;
+  }
+}
+
+.item {
+  background: $promo-carousel-item-bg-color;
+  border-right: $promo-carousel-item-border-right;
+  text-align: center;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  a {
+    text-decoration: none;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: $promo-carousel-item-font-color;
+    font-weight: $promo-carousel-item-font-weight;
+    line-height: 1.4;
+    height: 100%;
+    padding: 10px 0;
+  }
+  &.active {
+    background: $promo-carousel-item-active-bg-color;
+    a {
+      color: $promo-carousel-item-active-font-color;
+    }
+  }
+}

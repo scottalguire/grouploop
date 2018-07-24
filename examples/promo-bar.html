@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Promo List | grouploop.js Example</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="examples/css/examples.css" />
+</head>
+<style type="text/css">
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+  }
+
+  html {
+    font-family: sans-serif;
+  }
+</style>
+
+<body>
+  <div class="promo-carousel" id="grouploop-1">
+    <div class="item-wrap">
+      <div class="item active">
+        <a href="#">Recent Deals</a>
+      </div>
+      <div class="item">
+        <a href="#">Super Special</a>
+      </div>
+      <div class="item">
+        <a href="#">Promo Code
+          <br/>SAVE30</a>
+      </div>
+      <div class="item">
+        <a href="#">20% Off Sale!</a>
+      </div>
+      <div class="item">
+        <a href="#">New Products!</a>
+      </div>
+      <div class="item">
+        <a href="#">Used deals</a>
+      </div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+  <script type="text/javascript" src="dist/grouploop-1.0.0.min.js"></script>
+  <script>
+    $('#grouploop-1').grouploop({
+      velocity: 2,
+      forward: false,
+      pauseOnHover: true,
+      childNode: ".item",
+      childWrapper: ".item-wrap",
+      complete: function () { console.log("Initialized a grouploop with id: " + $(this).attr('id')) }
+    });
+  </script>
+</body>
+
+</html>
