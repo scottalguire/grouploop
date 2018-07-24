@@ -2,6 +2,7 @@
 Name: jQuery grouploop plugin
 Verison: 1.0
 Author: Scott Alguire
+Repository: https://github.com/scottalguire/grouploop
 */
 
 (function($) {
