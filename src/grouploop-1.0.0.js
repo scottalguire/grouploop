@@ -22,12 +22,21 @@ Repository: https://github.com/scottalguire/grouploop
       );
 
       var el = this;
-      var w = $(window).width();
+      var w =
+        $(window).width() <= 768 ? $(window).width() * 2 : $(window).width();
       var v = settings.velocity; // velocity
+      var wrapWidth = 400;
       var curXPos;
 
       window.addEventListener("resize", function() {
         w = $(window).width();
+        // console.log(w);
+        if (w <= 768) {
+          console.log("Small breakpoint. Doubling wrapper width");
+          w = w * 2;
+        } else {
+          w = $(window).width();
+        }
       });
 
       if (settings.forward) {

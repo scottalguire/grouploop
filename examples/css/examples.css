@@ -4,7 +4,7 @@
   overflow: hidden; }
   .promo-carousel .item-wrap {
     transform: translateX(0px);
-    width: 200%;
+    width: 400%;
     position: relative;
     white-space: nowrap;
     display: flex; }
@@ -33,3 +33,7 @@
     background: #1280b3; }
     .item.active a {
       color: #fff; }
+
+@media (min-width: 768px) {
+  .promo-carousel .item-wrap {
+    width: 200%; } }

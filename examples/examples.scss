@@ -15,7 +15,7 @@ $promo-carousel-item-active-font-color: #fff;
   overflow: hidden;
   .item-wrap {
     transform: translateX(0px);
-    width: 200%;
+    width: 400%;
     position: relative;
     white-space: nowrap;
     display: flex;
@@ -47,6 +47,14 @@ $promo-carousel-item-active-font-color: #fff;
     background: $promo-carousel-item-active-bg-color;
     a {
       color: $promo-carousel-item-active-font-color;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .promo-carousel {
+    .item-wrap {
+      width: 200%;
     }
   }
 }
