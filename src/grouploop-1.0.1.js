@@ -16,26 +16,72 @@ Repository: https://github.com/scottalguire/grouploop
           childNode: ".item",
           childWrapper: ".item-wrap",
           pauseOnHover: true,
-          complete: null
+          complete: null,
+          stickFirstItem: false
         },
         options
       );
 
+      var curXPos;
+      var stickyItemWidth;
       var el = this;
       var w =
         $(window).width() <= 768 ? $(window).width() * 2 : $(window).width();
       var v = settings.velocity; // velocity
-      var wrapWidth = 400;
-      var curXPos;
+      var wrapperWidth =
+        $(window).width() <= 768 ? $(el).width() * 2 : $(el).width();
+      var firstItem = $(el)
+        .find(settings.childWrapper + " " + settings.childNode)
+        .first();
+      var numChildren = $(el).find(
+        settings.childWrapper + " " + settings.childNode
+      ).length;
+
+      if (settings.stickFirstItem) {
+        stickFirstItemFunc();
+      } else {
+        stickyItemWidth = 0;
+      }
+
+      function stickFirstItemFunc() {
+        stickyItemWidth = wrapperWidth / (numChildren - 1);
+        el.css("position", "relative");
+        firstItem.remove();
+        firstItem.css({
+          position: "absolute",
+          top: "0",
+          left: "0",
+          width: stickyItemWidth,
+          height: "100%",
+          "z-index": "999"
+        });
+        firstItem.prependTo(el).find(settings.childWrapper);
+        // console.log(
+        //   "wrapperWidth:" +
+        //     wrapperWidth +
+        //     "\n" +
+        //     "numChildren: " +
+        //     numChildren +
+        //     "\n" +
+        //     "stickyItemWidth: " +
+        //     stickyItemWidth
+        // );
+      }
 
       window.addEventListener("resize", function() {
         w = $(window).width();
+
         // console.log(w);
         if (w <= 768) {
-          console.log("Small breakpoint. Doubling wrapper width");
+          console.log("Small breakpoint. Wrapper width is currently doubled.");
           w = w * 2;
+          wrapperWidth = $(el).width() * 2;
         } else {
           w = $(window).width();
+          wrapperWidth = $(el).width();
+        }
+        if (settings.stickFirstItem) {
+          stickFirstItemFunc();
         }
       });
 
@@ -93,7 +139,7 @@ Repository: https://github.com/scottalguire/grouploop
           } else {
             $(el)
               .find(settings.childWrapper)
-              .css("transform", "translateX(" + -w + ")");
+              .css("transform", "translateX(" + -w - stickyItemWidth + ")");
             curXPos = -w;
           }
         } else {

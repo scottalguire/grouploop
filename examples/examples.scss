@@ -20,33 +20,33 @@ $promo-carousel-item-active-font-color: #fff;
     white-space: nowrap;
     display: flex;
   }
-}
-
-.item {
-  background: $promo-carousel-item-bg-color;
-  border-right: $promo-carousel-item-border-right;
-  text-align: center;
-  display: flex;
-  flex: 1;
-  justify-content: center;
-  align-items: center;
-  a {
-    text-decoration: none;
+  .item {
+    background: $promo-carousel-item-bg-color;
+    border-right: $promo-carousel-item-border-right;
+    text-align: center;
     display: flex;
     flex: 1;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: $promo-carousel-item-font-color;
-    font-weight: $promo-carousel-item-font-weight;
-    line-height: 1.4;
-    height: 100%;
-    padding: 10px 0;
-  }
-  &.active {
-    background: $promo-carousel-item-active-bg-color;
     a {
-      color: $promo-carousel-item-active-font-color;
+      text-decoration: none;
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: $promo-carousel-item-font-color;
+      font-weight: $promo-carousel-item-font-weight;
+      line-height: 1.4;
+      height: 100%;
+      padding: 10px 0;
+    }
+    &.active {
+      background: $promo-carousel-item-active-bg-color;
+      padding: 0;
+      a {
+        color: $promo-carousel-item-active-font-color;
+      }
     }
   }
 }

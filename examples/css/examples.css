@@ -8,31 +8,31 @@
     position: relative;
     white-space: nowrap;
     display: flex; }
-
-.item {
-  background: #fff;
-  border-right: 1px solid #eee;
-  text-align: center;
-  display: flex;
-  flex: 1;
-  justify-content: center;
-  align-items: center; }
-  .item a {
-    text-decoration: none;
+  .promo-carousel .item {
+    background: #fff;
+    border-right: 1px solid #eee;
+    text-align: center;
     display: flex;
     flex: 1;
-    flex-direction: column;
     justify-content: center;
-    align-items: center;
-    color: #333;
-    font-weight: bold;
-    line-height: 1.4;
-    height: 100%;
-    padding: 10px 0; }
-  .item.active {
-    background: #1280b3; }
-    .item.active a {
-      color: #fff; }
+    align-items: center; }
+    .promo-carousel .item a {
+      text-decoration: none;
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: #333;
+      font-weight: bold;
+      line-height: 1.4;
+      height: 100%;
+      padding: 10px 0; }
+    .promo-carousel .item.active {
+      background: #1280b3;
+      padding: 0; }
+      .promo-carousel .item.active a {
+        color: #fff; }
 
 @media (min-width: 768px) {
   .promo-carousel .item-wrap {
