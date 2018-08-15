@@ -34,5 +34,14 @@ $("#grouploop-1").grouploop({
   pauseOnHover: true,
   complete: function() {
     console.log("init");
-}
+},
+  stickFirstItem: true
 ```
+
+### Notes
+
+At a min-width(768px) the plugin will automatically double the transform travel distance of the item wrapper. It is recommended that in your CSS you ensure your wrapper width is also doubled at < 768px. (See the example)
+
+The animations use requestAnimationFrame() to ensure the device has processing power available before rendering the next frame.
+
+Check out the examples folder to see grouploop in action.

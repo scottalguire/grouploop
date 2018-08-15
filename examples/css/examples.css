@@ -3,7 +3,6 @@
   padding-bottom: 0;
   overflow: hidden; }
   .promo-carousel .item-wrap {
-    transform: translateX(0px);
     width: 400%;
     position: relative;
     white-space: nowrap;
