@@ -23,8 +23,7 @@ gulp.task("compress", function(cb) {
 // Static Server + watching scss/html files
 gulp.task("serve", ["sass"], function() {
   browserSync.init({
-    server: baseDir,
-    index: "examples/promo-bar.html"
+    server: baseDir
   });
 
   gulp.watch("examples/*.scss", ["sass"]);
