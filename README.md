@@ -12,7 +12,7 @@ Include jQuery and the library in your html:
 
 Create a container with a unique id and group some elements in a wrapper.
 
-```
+```html
 <div id="grouploop-1">
   <div class="item-wrap">
     <div class="item">Promo 1</div>
@@ -27,7 +27,7 @@ Create a container with a unique id and group some elements in a wrapper.
 
 Select your DOM element id with jQuery and call **_.grouploop()_** with or without options.
 
-```
+```javascript
 $("#grouploop-1").grouploop({
   velocity: 2,
   forward: false,
