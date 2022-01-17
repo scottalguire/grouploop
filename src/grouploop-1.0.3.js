@@ -27,7 +27,7 @@ Repository: https://github.com/scottalguire/grouploop
       var el = this;
       var windowWidth = $(window).width() < 768 ? $(window).width() * 2 : $(window).width();
       var v = settings.velocity; // velocity
-      var wrapperWidth = $(window).width() < 768 ? $(el).width() * 2 : $(el).width();
+      var wrapperWidth = $(window).width() < 768 ? $(el).width() * $(el).find(settings.childNode).length : $(el).width();
       var firstItem = $(el)
         .find(settings.childWrapper + " " + settings.childNode)
         .first();
@@ -147,7 +147,7 @@ Repository: https://github.com/scottalguire/grouploop
             curXPos = -windowWidth;
           }
         } else {
-          if (curXPos >= -windowWidth) {
+          if (curXPos >= -wrapperWidth) {
             curXPos = curXPos - 1 * v;
             $(el)
               .find(settings.childWrapper)
